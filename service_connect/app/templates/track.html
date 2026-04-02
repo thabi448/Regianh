@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Your Issues</h2>
+
+{% for issue in issues %}
+<p>{{ issue.title }} - {{ issue.status }}</p>
+{% endfor %}
+<br>
+
+<a href="{% url 'dashboard' %}">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Contact Us</h2>
+
+<p>If you have any questions or need assistance, feel free to contact us:</p>
+
+<ul>
+    <li><strong>Email:</strong> support@serviceconnect.com</li>
+    <li><strong>Phone:</strong> +27 12 345 6789</li>
+    <li><strong>Address:</strong> 123 Main Street, Pretoria, South Africa</li>
+</ul>
+
+<h3>Send us a message</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="Your Name" required><br><br>
+    <input type="email" placeholder="Your Email" required><br><br>
+    <textarea placeholder="Your Message" rows="5" required></textarea><br><br>
+    <button type="submit">Send Message</button>
+</form>
+
+<br>
+
+<a href="{% url 'dashboard' %}">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}

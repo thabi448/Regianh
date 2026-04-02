@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Reported Issues</h2>
+
+<p>Here are all the issues submitted by users:</p>
+
+<table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse;">
+    <tr style="background-color: #2196F3; color: white;">
+        <th>ID</th>
+        <th>User</th>
+        <th>Email</th>
+        <th>Issue</th>
+        <th>Date</th>
+    </tr>
+
+    {% for issue in issues %}
+    <tr style="background-color: #f9f9f9;">
+        <td>{{ issue.id }}</td>
+        <td>{{ issue.user.first_name }} {{ issue.user.last_name }}</td>
+        <td>{{ issue.user.email }}</td>
+        <td>{{ issue.description }}</td>
+        <td>{{ issue.message }}</td>
+        <td>{{ issue.created_at }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5" style="text-align:center;">No issues reported yet.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<a href="{% url 'dashboard' %}">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}

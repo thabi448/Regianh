@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>My Profile</h2>
+
+<div style="border:1px solid #ccc; padding:20px; width:300px;">
+    
+    <p><strong>First Name:</strong> {{ request.user.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ request.user.last_name }}</p>
+    <p><strong>Email:</strong> {{ request.user.email }}</p>
+    <p><strong>Phone Number:</strong> {{ request.user.phone }}</p>
+
+</div>
+
+<br>
+
+<a href="{% url 'dashboard' %}">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}

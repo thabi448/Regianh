@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Report Issue</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<br>
+
+<a href="{% url 'dashboard' %}">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}

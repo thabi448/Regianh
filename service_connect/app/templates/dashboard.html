@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<a href="{% url 'report' %}"><button>Report Issue</button></a>
+<a href="{% url 'track' %}"><button>Track Issues</button></a>
+<a href="{% url 'view' %}"><button>View Issues</button></a>
+
+<h3>Recent Updates</h3>
+
+{% for issue in issues %}
+<p>{{ issue.title }} - {{ issue.status }}</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to Service Connect</h1>
+
+<a href="{% url 'login' %}"><button>Login</button></a>
+<a href="{% url 'signup' %}"><button>Sign Up</button></a>
+{% endblock %}

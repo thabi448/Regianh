@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>About Service Connect</h2>
+
+<p>
+Service Connect is a digital platform designed to help local community members 
+report service delivery issues such as water leaks, electricity problems, and potholes.
+</p>
+
+<p>
+Our goal is to make communication between citizens and municipalities simple, fast, and effective.
+Users can easily report issues, track progress, and receive updates in real time.
+</p>
+
+<h3>Our Mission</h3>
+<p>
+To improve service delivery by providing a user-friendly platform that ensures transparency,
+efficiency, and accountability.
+</p>
+
+<h3>What We Offer</h3>
+<ul>
+    <li>Easy issue reporting</li>
+    <li>Real-time feedback</li>
+    <li>Progress tracking</li>
+    <li>Direct communication with municipalities</li>
+</ul>
+<br>
+
+<a href="{% url 'dashboard' %}">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}
